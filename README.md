@@ -5,6 +5,7 @@ draws daily, weekly, and cumulative graphs and always reports how much of the
 calendar is backed by exact turns versus historical aggregate allocation.
 
 ![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
+![PyPI](https://img.shields.io/pypi/v/claude-usage-tui)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Install
@@ -12,10 +13,16 @@ calendar is backed by exact turns versus historical aggregate allocation.
 With [`uv`](https://docs.astral.sh/uv/):
 
 ```bash
-uv tool install git+https://github.com/ivanopcode/claude-usage.git
+uv tool install claude-usage-tui
 ```
 
-Or from a checkout:
+Or with [`pipx`](https://pipx.pypa.io/):
+
+```bash
+pipx install claude-usage-tui
+```
+
+For development, install from a checkout:
 
 ```bash
 uv tool install .
@@ -115,6 +122,11 @@ included.
 python3 -m unittest discover -s tests -v
 python3 -m py_compile cli.py collector.py usage_tui.py
 ```
+
+Releases use PyPI Trusted Publishing: a signed `vX.Y.Z` tag must exactly match
+`collector.VERSION`. GitHub Actions tests and builds the distributions, uploads
+them to PyPI through short-lived OIDC credentials, and then creates the GitHub
+Release. See [`RELEASING.md`](RELEASING.md).
 
 ## License
 
