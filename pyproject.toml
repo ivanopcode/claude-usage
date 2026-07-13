@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-usage-tui"
+version = "0.1.0"
+description = "Local Claude Code token activity graphs with explicit source accuracy"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Ivan Oparin", email = "oparin@me.com" }]
+keywords = ["claude-code", "terminal", "tui", "tokens", "usage"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ivanopcode/claude-usage"
+Issues = "https://github.com/ivanopcode/claude-usage/issues"
+
+[project.scripts]
+claude-usage = "cli:main"
+
+[tool.setuptools]
+py-modules = ["cli", "collector", "usage_tui"]
